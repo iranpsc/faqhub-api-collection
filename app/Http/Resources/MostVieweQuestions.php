@@ -17,10 +17,8 @@ class MostVieweQuestions extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'content' => $this->content,
             'slug' => $this->slug,
-            'category_name' => $this->category->name,
-            'author' => $this->user->name ?? 'admin',
+            'category_name' => $this->category_name,
             'likes_count' => $this->likes_count ?? 0,
             'views' => $this->views ?? 0,
             'created_at' => $this->created_at
