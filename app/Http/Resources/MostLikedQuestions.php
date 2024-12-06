@@ -20,6 +20,7 @@ class MostLikedQuestions extends JsonResource
             'content' => $this->content,
             'slug' => $this->slug,
             'category_name' => $this->category_name,
+            'created_at' => $this->created_at,
             'author' => $this->user_name ?? 'admin',
             'likes_count' => $this->likes_count ?? 0
         ];
