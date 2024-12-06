@@ -1,11 +1,11 @@
  **FAQ Hub API Collection** project:
 
-```markdown
+
 # Contributing to FAQ Hub API Collection
 
 Thank you for considering contributing to the **FAQ Hub API Collection**! We welcome contributions from the community and appreciate your interest in making this project better. By following this guide, you will help ensure that contributions are managed in a smooth and productive way.
 
-## How to Contribute
+### How to Contribute
 
 There are several ways you can contribute to this project:
 
