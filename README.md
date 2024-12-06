@@ -171,8 +171,5 @@ This project is licensed under the **MIT** License. For more details, please see
 Thank you for your interest in this project! We hope this system helps you manage your FAQs in an efficient way.
 ```
 
-### Key Updates:
-1. **API and Livewire Projects**: Clarified that the API is specifically for the [FAQ Hub Livewire](https://github.com/iranpsc/faqhub-livewire.git) project.
-2. **Running Both Projects Locally**: Added clear instructions on how to run both projects (`API` on port `8001` and `Livewire` on port `8000`) simultaneously in a local environment.
-3. **General English Translation**: The entire README content is translated to English while maintaining clarity and precision.
+
 
