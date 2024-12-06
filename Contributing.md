@@ -94,7 +94,7 @@ Thank you for your interest in contributing to the **FAQ Hub API Collection**! Y
 If you have any questions or need assistance, feel free to reach out through [Issues](https://github.com/iranpsc/faqhub-api-collection/issues) or contact the maintainers directly.
 
 We look forward to your contributions!
-```
+
 
 ### Key Sections:
 1. **Reporting Issues**: Instructions on how to report bugs, including checking for existing issues and providing detailed descriptions.
