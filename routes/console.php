@@ -9,4 +9,5 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote')->hourly();
 
 Schedule::command('update:most-view-questions')->hourly();
+Schedule::command('update-most-liked-questions')->hourly();
 Schedule::command('update-statistics')->hourly();

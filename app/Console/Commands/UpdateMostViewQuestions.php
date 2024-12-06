@@ -28,7 +28,7 @@ class UpdateMostViewQuestions extends Command
      */
     public function handle()
     {
-        $this->info('Updating most view questions...');
+        $this->info('Most viewed questions updated successfully.');
         // شروع تراکنش
         DB::transaction(function () {
             // گرفتن ۱۲ سوال با بیشترین بازدید
