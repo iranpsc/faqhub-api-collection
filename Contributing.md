@@ -105,4 +105,4 @@ We look forward to your contributions!
 6. **Pull Request Guidelines**: Clear instructions for submitting clean, well-documented pull requests.
 7. **Code of Conduct**: A reference to the project's code of conduct for maintaining a positive and respectful environment.
 
-This `CONTRIBUTING.md` file will help guide contributors in an organized and constructive way. Let me know if you'd like to make any modifications!
+
