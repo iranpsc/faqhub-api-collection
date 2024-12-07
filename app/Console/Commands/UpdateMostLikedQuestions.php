@@ -58,6 +58,7 @@ class UpdateMostLikedQuestions extends Command
                     'category_name' => $question->category->name,
                     'user_name' => $question->user->name,
                     'created_at' => $question->created_at,
+                    'likes_count' => $question->votes_count,
                 ];
             })->toArray();
             $this->info('Data is updating at: ' . now()->format('Y-m-d H:i:s'));
