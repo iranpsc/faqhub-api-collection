@@ -8,6 +8,7 @@ use App\Models\Statistic;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class HomePageService
 {
@@ -34,7 +35,6 @@ class HomePageService
                 ->get();
             return $questions;
         }
-
     }
 
     /**
@@ -62,7 +62,6 @@ class HomePageService
                 ->get();
             return $questions;
         }
-
     }
 
     /**
@@ -71,11 +70,11 @@ class HomePageService
 
     public function getLatestCategories(): mixed
     {
-        return Category::join('categories_activity', 'categories.id', '=', 'categories_activity.category_id')
-            ->orderByDesc('categories_activity.last_activity')
-            ->distinct()
-            ->select('categories.*')
-            ->where('status', 'active')
+        return Category::select('categories.*', DB::raw('MAX(categories_activity.last_activity) as last_activity'))
+            ->join('categories_activity', 'categories.id', '=', 'categories_activity.category_id')
+            ->where('categories.status', 'active')
+            ->groupBy('categories.id')
+            ->orderByDesc('last_activity')
             ->limit(12)
             ->get();
     }
@@ -135,6 +134,4 @@ class HomePageService
             return Statistic::all();
         });
     }
-
-
 }
