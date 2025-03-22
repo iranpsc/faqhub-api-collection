@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Http\Resources\MostLikedQuestions;
 use App\Models\Category;
+use App\Models\MostLikeQuestion;
+use App\Models\MostViewQuestion;
 use App\Models\Question;
 use App\Models\Statistic;
 use App\Models\User;
@@ -85,18 +88,7 @@ class HomePageService
     public function getMostLikedQuestions(): mixed
     {
         return Cache::remember('most_liked_questions', 600, function () {
-            return Question::select('questions.id', 'questions.title', 'questions.slug', 'questions.content', 'questions.created_at')
-                ->join('questions_activity', 'questions.id', '=', 'questions_activity.question_id')
-                ->leftJoin('votes', function ($join) {
-                    $join->on('questions.id', '=', 'votes.voteable_id')
-                        ->where('votes.voteable_type', '=', Question::class)
-                        ->where('votes.vote_type', '=', 1);
-                })
-                ->groupBy('questions.id', 'questions.title', 'questions.slug', 'questions.content', 'questions.created_at', 'questions_activity.last_activity')
-                ->orderByRaw('COUNT(votes.id) DESC')
-                ->orderByDesc('questions_activity.last_activity')
-                ->take(12)
-                ->get();
+            return MostLikeQuestion::all();
         });
     }
 
@@ -106,12 +98,7 @@ class HomePageService
     public function getMostViewedQuestions(): mixed
     {
         return Cache::remember('most_viewed_questions', 600, function () {
-            return Question::select('questions.id', 'questions.category_id', 'questions.views', 'questions.user_id', 'questions.title', 'questions.slug', 'questions.content', 'questions.created_at', 'users.name as user_name', 'categories.name as category_name')
-                ->join('users', 'questions.user_id', '=', 'users.id')
-                ->join('categories', 'questions.category_id', '=', 'categories.id')
-                ->orderBy('views', 'desc')
-                ->take(12)
-                ->get();
+            return MostViewQuestion::all();
         });
     }
 

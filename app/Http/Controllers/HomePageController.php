@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ActiveUsers;
 use App\Http\Resources\LatestCategories;
 use App\Http\Resources\LatestQuestionsResource;
+use App\Http\Resources\MostLikedQuestions;
 use App\Http\Resources\MostVieweQuestions;
 use App\Http\Resources\PinnedQuestions;
 use App\Http\Resources\Statistics;
@@ -40,7 +41,7 @@ class HomePageController extends Controller
     public function mostLikedQuestions()
     {
         $mostLikedQuestions = $this->homePageService->getMostLikedQuestions();
-        return LatestQuestionsResource::collection($mostLikedQuestions);
+        return MostLikedQuestions::collection($mostLikedQuestions);
     }
 
 
