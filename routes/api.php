@@ -4,6 +4,7 @@ use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SingleQuestion;
 use App\Http\Controllers\VoteController;
 use App\Http\Middleware\CheckAnswerStatusAccess;
@@ -42,7 +43,8 @@ Route::prefix('/questions/question')->group(function () {
 //=============
 //SEARCH QUESTION APIS
 //=============
-Route::get('/questions/search', [SingleQuestion::class, 'search']);
+Route::get('/questions/search', [SearchController::class, 'searchQuestions']);
+Route::get('/tags/search', [SearchController::class, 'searchTags']);
 //=============
 //COMMENT APIS
 //=============

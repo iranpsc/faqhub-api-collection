@@ -10,8 +10,8 @@ class Statistic extends Model
 
     protected $guarded = [];
 
-    public function getValueByKey($key)
+    public static function getValueByKey($key)
     {
-        return $this->where('key', $key)->first()->value;
+        return self::where('key', $key)->first()->value;
     }
 }
